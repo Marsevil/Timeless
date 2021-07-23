@@ -9,7 +9,7 @@
 
         <ion-item class="ion-padding-bottom">
             <ion-label position="stacked"> Choice name : </ion-label>
-            <ion-input placeholder="name"></ion-input>
+            <ion-input v-model="name" placeholder="name"></ion-input>
         </ion-item>
 
         <ion-list lines="full">
@@ -19,19 +19,19 @@
 
             <ion-item>
                 <ion-label position="floating"> Option 1 </ion-label>
-                <ion-input></ion-input>
+                <ion-input v-model="option1"></ion-input>
             </ion-item>
 
             <ion-item>
                 <ion-label position="floating"> Option 2 </ion-label>
-                <ion-input></ion-input>
+                <ion-input v-model="option2"></ion-input>
             </ion-item>
 
         </ion-list>
 
       <!-- Cancel button -->
       <ion-fab vertical="bottom" horizontal="start" slot="fixed">
-          <ion-fab-button color="danger" href="/tabs/choices">
+          <ion-fab-button color="danger" router-link="/tabs/choices">
               <ion-icon :icon="close"></ion-icon>
           </ion-fab-button>
       </ion-fab>
@@ -57,7 +57,10 @@ import {
   IonFabButton,
   IonInput,
   IonList,
-  IonListHeader
+  IonListHeader,
+  IonIcon,
+  IonItem,
+  IonLabel
 } from "@ionic/vue";
 
 // import ionic icon
@@ -75,7 +78,18 @@ export default {
     IonFabButton,
     IonInput,
     IonList,
-    IonListHeader
+    IonListHeader,
+    IonIcon,
+    IonItem,
+    IonLabel
+  },
+
+  data: function() {
+    return {
+      name: "",
+      option1: "",
+      option2: ""
+    };
   },
 
   setup: () => {

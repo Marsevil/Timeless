@@ -15,7 +15,7 @@
       </ion-list>
 
       <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button href="/tabs/choices/new"> <ion-icon :icon="add"></ion-icon> </ion-fab-button>
+        <ion-fab-button router-link="/tabs/choices/new"> <ion-icon :icon="add"></ion-icon> </ion-fab-button>
       </ion-fab>
       
     </ion-content>
@@ -33,6 +33,9 @@ import {
   IonFab,
   IonFabButton,
   IonList,
+  IonItem,
+  IonIcon,
+  IonLabel
 } from "@ionic/vue";
 
 // Import ionic logo
@@ -49,6 +52,9 @@ export default {
     IonFab,
     IonFabButton,
     IonList,
+    IonItem,
+    IonIcon,
+    IonLabel
   },
 
   data: () => {
@@ -59,6 +65,12 @@ export default {
         { title: "Choice 3" },
         { title: "Choice 4" }
       ]
+    }
+  },
+
+  computed: {
+    console: function() {
+      return console;
     }
   },
 
